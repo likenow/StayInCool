@@ -18,7 +18,7 @@ struct LandmarkListView: View {
     @ObservedObject var weatherKitManager = WeatherKitManager()
     
     @State private var isWeatherTaskCompleted = false
-
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         NavigationStack {
@@ -82,6 +82,25 @@ struct LandmarkListView: View {
                                             .font(.system(size: 40))
                                         Spacer()
                                     }
+                                } footer: {
+                                    HStack {
+                                        Spacer()
+                                        VStack {
+                                            if let attribution = weatherKitManager.attributionInfo {
+                                                AsyncImage(url: colorScheme == .dark ? attribution.combinedMarkDarkURL : attribution.combinedMarkLightURL) { image in
+                                                    image
+                                                        .resizable()
+                                                        .scaledToFit()
+                                                        .frame(height: 20)
+                                                } placeholder: {
+                                                    ProgressView()
+                                                }
+                                                Link("Other data sources", destination: attribution.legalPageURL)
+                                            }
+                                        }
+                                        .padding()
+                                        Spacer()
+                                    }
                                 }
                             }
                         }
@@ -118,6 +137,7 @@ struct LandmarkListView: View {
         if locationManager.authorizationStatus == .authorizedWhenInUse || locationManager.authorizationStatus == .authorizedAlways {
             Task.detached { @MainActor in
                 weatherKitManager.updateCurrentWeather(userLocation: curLocation)
+                weatherKitManager.updateAttributionInfo()
                 isWeatherTaskCompleted = true
             }
         }
