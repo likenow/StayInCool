@@ -51,7 +51,7 @@ struct LandmarkListView: View {
                         VStack(alignment: .leading) {
                             Text(landmark.name)
                                 .font(.title)
-                            
+                            Divider()
                             HStack {
                                 Text(landmark.name)
                                 Spacer()
@@ -59,10 +59,10 @@ struct LandmarkListView: View {
                             }
                             .font(.subheadline)
                             .foregroundColor(.secondary)
-                            Divider()
-                            Text("About \(landmark.name)")
-                                .font(.title2)
-                            Text(landmark.title)
+//                            Divider()
+//                            Text("About \(landmark.name)")
+//                                .font(.title2)
+//                            Text(landmark.title)
                         }
                         .padding()
                     }
