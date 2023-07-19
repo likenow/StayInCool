@@ -15,6 +15,7 @@ class WeatherKitManager: ObservableObject {
     static let shared = WeatherKitManager()
     private let service = WeatherService.shared
     @Published var currentWeather: CurrentWeather?
+    @Published var dailyWeather: Forecast<DayWeather>?
     var attributionInfo: WeatherAttribution?
     
     
@@ -35,9 +36,10 @@ class WeatherKitManager: ObservableObject {
             do {
                 let forcast = try await self.service.weather(
                     for: userLocation,
-                    including: .current)
+                    including: .daily, .current)
                 DispatchQueue.main.async {
-                    self.currentWeather = forcast
+                    self.dailyWeather = forcast.0
+                    self.currentWeather = forcast.1
                 }
             } catch {
                 print(error.localizedDescription)

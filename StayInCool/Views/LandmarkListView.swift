@@ -71,10 +71,20 @@ struct LandmarkListView: View {
                         Group {
                             Form {
                                 Section {
-                                    Label(currentWeather.temperature.formatted(), systemImage: "thermometer")
+                                    Label(currentWeather.temperature.converted(to: .celsius).description, systemImage: "thermometer")
                                     Label("\(Int(currentWeather.humidity * 100))%", systemImage: "humidity.fill")
                                     // Day time Night time
                                     Label(currentWeather.isDaylight ? "白天" : "夜间", systemImage: currentWeather.isDaylight ? "sun.max.fill" : "moon.stars.fill")
+                                    if let dailyWeather = weatherKitManager.dailyWeather {
+                                        ForEach(dailyWeather, id: \.self.date) { weatherEntry in
+                                            HStack {
+                                                Image(systemName: weatherEntry.symbolName)
+                                                Text("\(weatherEntry.lowTemperature.converted(to: .celsius).description) ~ \(weatherEntry.highTemperature.converted(to: .celsius).description)")
+                                                Spacer()
+                                                Text(DateFormatter.localizedString(from: weatherEntry.date, dateStyle: .short, timeStyle: .none))
+                                            }
+                                        }
+                                    }
                                 } header: {
                                     HStack {
                                         Spacer()
@@ -95,7 +105,7 @@ struct LandmarkListView: View {
                                                 } placeholder: {
                                                     ProgressView()
                                                 }
-                                                Link("Other data sources", destination: attribution.legalPageURL)
+                                                Link("数据来源", destination: attribution.legalPageURL)
                                             }
                                         }
                                         .padding()
