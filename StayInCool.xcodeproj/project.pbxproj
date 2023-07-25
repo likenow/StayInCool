@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E3E49622A6FC4D00053476F /* AboutPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3E49612A6FC4D00053476F /* AboutPageView.swift */; };
+		0E3E49642A6FF4AE0053476F /* IAPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3E49632A6FF4AE0053476F /* IAPViewModel.swift */; };
+		0E3E49662A6FF4D80053476F /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3E49652A6FF4D80053476F /* StoreManager.swift */; };
+		0E3E49682A6FF9B70053476F /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3E49672A6FF9B70053476F /* WebView.swift */; };
+		0E3E496C2A6FFD450053476F /* agreement.html in Resources */ = {isa = PBXBuildFile; fileRef = 0E3E496A2A6FFD450053476F /* agreement.html */; };
+		0E3E496D2A6FFD450053476F /* privacy.html in Resources */ = {isa = PBXBuildFile; fileRef = 0E3E496B2A6FFD450053476F /* privacy.html */; };
 		0E7670512A62ADC8006A746C /* MoveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7670502A62ADC8006A746C /* MoveButton.swift */; };
 		0E98D1A22A5E7A29002D8A46 /* StayInCoolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E98D1A12A5E7A29002D8A46 /* StayInCoolApp.swift */; };
 		0E98D1A42A5E7A29002D8A46 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E98D1A32A5E7A29002D8A46 /* ContentView.swift */; };
@@ -41,6 +47,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E3E49612A6FC4D00053476F /* AboutPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPageView.swift; sourceTree = "<group>"; };
+		0E3E49632A6FF4AE0053476F /* IAPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPViewModel.swift; sourceTree = "<group>"; };
+		0E3E49652A6FF4D80053476F /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		0E3E49672A6FF9B70053476F /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		0E3E496A2A6FFD450053476F /* agreement.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = agreement.html; sourceTree = "<group>"; };
+		0E3E496B2A6FFD450053476F /* privacy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = privacy.html; sourceTree = "<group>"; };
 		0E7670502A62ADC8006A746C /* MoveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveButton.swift; sourceTree = "<group>"; };
 		0E98D19E2A5E7A29002D8A46 /* StayInCool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StayInCool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E98D1A12A5E7A29002D8A46 /* StayInCoolApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayInCoolApp.swift; sourceTree = "<group>"; };
@@ -86,6 +98,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E3E49692A6FFD450053476F /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				0E3E496A2A6FFD450053476F /* agreement.html */,
+				0E3E496B2A6FFD450053476F /* privacy.html */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		0E98D1952A5E7A29002D8A46 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +130,7 @@
 		0E98D1A02A5E7A29002D8A46 /* StayInCool */ = {
 			isa = PBXGroup;
 			children = (
+				0E3E49692A6FFD450053476F /* Sources */,
 				0E98D1D42A60E42F002D8A46 /* Extensions */,
 				0E98D1D52A60E42F002D8A46 /* Managers */,
 				0E98D1D62A60E42F002D8A46 /* Models */,
@@ -153,6 +175,8 @@
 			children = (
 				0E98D1E12A60E8A7002D8A46 /* LandmarkListView.swift */,
 				0E7670502A62ADC8006A746C /* MoveButton.swift */,
+				0E3E49612A6FC4D00053476F /* AboutPageView.swift */,
+				0E3E49672A6FF9B70053476F /* WebView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -178,6 +202,7 @@
 			children = (
 				0E98D1DD2A60E89B002D8A46 /* LocationManager.swift */,
 				0E98D1DE2A60E89B002D8A46 /* WeatherKitManager.swift */,
+				0E3E49652A6FF4D80053476F /* StoreManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -186,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				0E98D1DB2A60E5A1002D8A46 /* Landmark.swift */,
+				0E3E49632A6FF4AE0053476F /* IAPViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -294,6 +320,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E3E496C2A6FFD450053476F /* agreement.html in Resources */,
+				0E3E496D2A6FFD450053476F /* privacy.html in Resources */,
 				0E98D1AA2A5E7A2B002D8A46 /* Preview Assets.xcassets in Resources */,
 				0E98D1A62A5E7A2B002D8A46 /* Assets.xcassets in Resources */,
 			);
@@ -322,12 +350,16 @@
 			files = (
 				0E98D1E02A60E89B002D8A46 /* WeatherKitManager.swift in Sources */,
 				0E98D1E22A60E8A7002D8A46 /* LandmarkListView.swift in Sources */,
+				0E3E49682A6FF9B70053476F /* WebView.swift in Sources */,
 				0E98D1D82A60E452002D8A46 /* LocalSearchService.swift in Sources */,
 				0E98D1DC2A60E5A1002D8A46 /* Landmark.swift in Sources */,
 				0E98D1DF2A60E89B002D8A46 /* LocationManager.swift in Sources */,
 				0E7670512A62ADC8006A746C /* MoveButton.swift in Sources */,
 				0E98D1DA2A60E4E4002D8A46 /* MKCoordinateRegion+Exts.swift in Sources */,
+				0E3E49622A6FC4D00053476F /* AboutPageView.swift in Sources */,
 				0E98D1A42A5E7A29002D8A46 /* ContentView.swift in Sources */,
+				0E3E49662A6FF4D80053476F /* StoreManager.swift in Sources */,
+				0E3E49642A6FF4AE0053476F /* IAPViewModel.swift in Sources */,
 				0E98D1A22A5E7A29002D8A46 /* StayInCoolApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
