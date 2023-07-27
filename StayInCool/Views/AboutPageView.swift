@@ -101,7 +101,7 @@ struct SupportUsView: View {
             }
             
             VStack(alignment: .leading) {
-                Text("赞助产品大大")
+                Text("赞助产品大大    ")
                 Text("¥ 28.0")
                     .font(.subheadline)
                     .foregroundColor(.red)

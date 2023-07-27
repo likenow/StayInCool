@@ -27,6 +27,7 @@
 		0E98D1DF2A60E89B002D8A46 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E98D1DD2A60E89B002D8A46 /* LocationManager.swift */; };
 		0E98D1E02A60E89B002D8A46 /* WeatherKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E98D1DE2A60E89B002D8A46 /* WeatherKitManager.swift */; };
 		0E98D1E22A60E8A7002D8A46 /* LandmarkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E98D1E12A60E8A7002D8A46 /* LandmarkListView.swift */; };
+		0E9BECA62A72856300038519 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E9BECA52A72856300038519 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		0E98D1DD2A60E89B002D8A46 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		0E98D1DE2A60E89B002D8A46 /* WeatherKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherKitManager.swift; sourceTree = "<group>"; };
 		0E98D1E12A60E8A7002D8A46 /* LandmarkListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandmarkListView.swift; sourceTree = "<group>"; };
+		0E9BECA52A72856300038519 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				0E98D1A52A5E7A2B002D8A46 /* Assets.xcassets */,
 				0E98D1A72A5E7A2B002D8A46 /* StayInCool.entitlements */,
 				0E98D1A82A5E7A2B002D8A46 /* Preview Content */,
+				0E9BECA52A72856300038519 /* Launch Screen.storyboard */,
 			);
 			path = StayInCool;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				0E3E496C2A6FFD450053476F /* agreement.html in Resources */,
 				0E3E496D2A6FFD450053476F /* privacy.html in Resources */,
 				0E98D1AA2A5E7A2B002D8A46 /* Preview Assets.xcassets in Resources */,
+				0E9BECA62A72856300038519 /* Launch Screen.storyboard in Resources */,
 				0E98D1A62A5E7A2B002D8A46 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -531,6 +535,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -577,6 +582,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
