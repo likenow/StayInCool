@@ -21,12 +21,12 @@ struct AboutUsView: View {
             Text("应用名是中国的一句俗语。有两层含义: ")
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding([.leading, .trailing], 10)
-            Text("    一就是本意，哪里凉快就去哪里歇着去凉快凉快；")
+            Text("一就是本意，哪里凉快就去哪里歇着去凉快凉快；")
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding([.leading, .trailing], 10)
-            Text("    二是有点厌烦态度,通常说是对于那些话多比较碍事还不讲理的人，叫他哪里凉快待哪里去,别再在你面前晃了。")
+                .padding([.leading, .trailing], 20)
+            Text("二是有点厌烦态度,通常说是对于那些话多比较碍事还不讲理的人，叫他哪里凉快待哪里去,别再在你面前晃了。")
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding([.leading, .trailing], 10)
+                .padding([.leading, .trailing], 20)
             Text("本应用当然只是第一层意思。用户可以搜索到目的地的天气情况，并且会在地图上标注出来。")
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding([.top, .leading, .trailing], 10)
@@ -62,15 +62,17 @@ struct SupportUsView: View {
     
     var body: some View {
         VStack {
-            Text("        感谢您能选择使用我们的产品，您的每一份支持我们都将投入到项目研发中，支持我们进行不断的迭代更新，创造更多好用的App，和我们一起努力让这个世界更加美好！")
+            Text("感谢您能选择使用我们的产品，您的每一份支持我们都将投入到项目研发中，支持我们进行不断的迭代更新，创造更多好用的App，和我们一起努力让这个世界更加美好！")
                 .padding([.leading, .trailing], 10)
             
             Text("赞助计划")
-                .padding(.top, 50)
+                .padding(.top, 30)
             
             VStack(alignment: .leading) {
                 Text("赞助程序员大佬")
+                    .frame(maxWidth: .infinity, alignment: .center)
                 Text("¥ 8.0")
+                    .frame(maxWidth: .infinity, alignment: .center)
                     .font(.subheadline)
                     .foregroundColor(.red)
             }
@@ -86,7 +88,9 @@ struct SupportUsView: View {
             
             VStack(alignment: .leading) {
                 Text("赞助设计小姐姐")
+                    .frame(maxWidth: .infinity, alignment: .center)
                 Text("¥ 12.0")
+                    .frame(maxWidth: .infinity, alignment: .center)
                     .font(.subheadline)
                     .foregroundColor(.red)
             }
@@ -101,8 +105,10 @@ struct SupportUsView: View {
             }
             
             VStack(alignment: .leading) {
-                Text("赞助产品大大    ")
+                Text("赞助产品大大")
+                    .frame(maxWidth: .infinity, alignment: .center)
                 Text("¥ 28.0")
+                    .frame(maxWidth: .infinity, alignment: .center)
                     .font(.subheadline)
                     .foregroundColor(.red)
             }
