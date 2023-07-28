@@ -30,6 +30,19 @@ struct ContentView: View {
                     TextField("赶紧去找凉快地儿", text: $search, onCommit: {
                         localSearchService.search(query: search)
                     })
+                    .toolbar {
+                        ToolbarItemGroup(placement: .keyboard, content: {
+                            // 在键盘工具栏中添加Done按钮
+                            Button("隐藏") {
+                                hideKeyboard()
+                            }
+                            Spacer()
+                            Button("搜索") {
+                                localSearchService.search(query: search)
+                                hideKeyboard()
+                            }
+                        })
+                    }
                     .textFieldStyle(.roundedBorder)
                     .padding()
                     
@@ -72,21 +85,7 @@ struct ContentView: View {
             }
         }
         .sheet(isPresented: $showingAboutPage) {
-            VStack {
-                HStack {
-                    Spacer()
-                    Button {
-                        showingAboutPage.toggle()
-                    } label: {
-                        Image(systemName: "xmark")
-                            .font(.title)
-                            .foregroundColor(.blue)
-                            .padding([.trailing, .top],20)
-                    }
-                }
-                
-                AboutPageView()
-            }
+            AboutPageView(isPresented: $showingAboutPage)
         }
     }
     

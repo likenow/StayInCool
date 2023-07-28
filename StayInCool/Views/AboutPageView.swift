@@ -61,79 +61,83 @@ struct SupportUsView: View {
     }
     
     var body: some View {
-        VStack {
-            Text("感谢您能选择使用我们的产品，您的每一份支持我们都将投入到项目研发中，支持我们进行不断的迭代更新，创造更多好用的App，和我们一起努力让这个世界更加美好！")
-                .padding([.leading, .trailing], 10)
-            
-            Text("赞助计划")
-                .padding(.top, 30)
-            
-            VStack(alignment: .leading) {
-                Text("赞助程序员大佬")
-                    .frame(maxWidth: .infinity, alignment: .center)
-                Text("¥ 8.0")
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .font(.subheadline)
-                    .foregroundColor(.red)
+        ScrollView {
+            VStack {
+                Text("感谢您能选择使用我们的产品，您的每一份支持我们都将投入到项目研发中，支持我们进行不断的迭代更新，创造更多好用的App，和我们一起努力让这个世界更加美好！")
+                    .padding([.leading, .trailing], 10)
+                
+                Text("赞助计划")
+                    .padding(.top, 30)
+                
+                VStack(alignment: .leading) {
+                    Text("赞助程序员大佬")
+                        .frame(maxWidth: .infinity, alignment: .center)
+                    Text("¥ 8.0")
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .font(.subheadline)
+                        .foregroundColor(.red)
+                }
+                .frame(width: 280, height: 50)
+                .cornerRadius(8)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 8, style: .continuous)
+                        .stroke(.gray, lineWidth: 0.5)
+                )
+                .onTapGesture {
+                    productsReq("SupportPlanC001")
+                }
+                
+                VStack(alignment: .leading) {
+                    Text("赞助设计小姐姐")
+                        .frame(maxWidth: .infinity, alignment: .center)
+                    Text("¥ 12.0")
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .font(.subheadline)
+                        .foregroundColor(.red)
+                }
+                .frame(width: 280, height: 50)
+                .cornerRadius(8)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 8, style: .continuous)
+                        .stroke(.gray, lineWidth: 0.5)
+                )
+                .onTapGesture {
+                    productsReq("SupportPlanC002")
+                }
+                
+                VStack(alignment: .leading) {
+                    Text("赞助产品大大")
+                        .frame(maxWidth: .infinity, alignment: .center)
+                    Text("¥ 28.0")
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .font(.subheadline)
+                        .foregroundColor(.red)
+                }
+                .frame(width: 280, height: 50)
+                .cornerRadius(8)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 8, style: .continuous)
+                        .stroke(.gray, lineWidth: 0.5)
+                )
+                .onTapGesture {
+                    productsReq("SupportPlanC003")
+                }
+                
+                Spacer()
             }
-            .frame(width: 280, height: 50)
-            .cornerRadius(8)
-            .overlay(
-                RoundedRectangle(cornerRadius: 8, style: .continuous)
-                    .stroke(.gray, lineWidth: 0.5)
-            )
-            .onTapGesture {
-                productsReq("SupportPlanC001")
+            .navigationBarTitle("支持我们")
+            .onAppear {
+                // Fetch the product list when the view appears
+                let productIdentifiers: Set<String> = ["SupportPlanC001", "SupportPlanC002", "SupportPlanC003"]
+                iapViewModel.fetchProducts(productIdentifiers: productIdentifiers)
             }
-            
-            VStack(alignment: .leading) {
-                Text("赞助设计小姐姐")
-                    .frame(maxWidth: .infinity, alignment: .center)
-                Text("¥ 12.0")
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .font(.subheadline)
-                    .foregroundColor(.red)
-            }
-            .frame(width: 280, height: 50)
-            .cornerRadius(8)
-            .overlay(
-                RoundedRectangle(cornerRadius: 8, style: .continuous)
-                    .stroke(.gray, lineWidth: 0.5)
-            )
-            .onTapGesture {
-                productsReq("SupportPlanC002")
-            }
-            
-            VStack(alignment: .leading) {
-                Text("赞助产品大大")
-                    .frame(maxWidth: .infinity, alignment: .center)
-                Text("¥ 28.0")
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .font(.subheadline)
-                    .foregroundColor(.red)
-            }
-            .frame(width: 280, height: 50)
-            .cornerRadius(8)
-            .overlay(
-                RoundedRectangle(cornerRadius: 8, style: .continuous)
-                    .stroke(.gray, lineWidth: 0.5)
-            )
-            .onTapGesture {
-                productsReq("SupportPlanC003")
-            }
-            
-            Spacer()
-        }
-        .navigationBarTitle("支持我们")
-        .onAppear {
-            // Fetch the product list when the view appears
-            let productIdentifiers: Set<String> = ["SupportPlanC001", "SupportPlanC002", "SupportPlanC003"]
-            iapViewModel.fetchProducts(productIdentifiers: productIdentifiers)
         }
     }
 }
 
 struct AboutPageView: View {
+    @Binding var isPresented: Bool
+    
     var body: some View {
         NavigationStack {
             List {
@@ -142,6 +146,16 @@ struct AboutPageView: View {
                 }
                 NavigationLink(destination: SupportUsView()) {
                     Text("支持我们")
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        isPresented.toggle()
+                    } label: {
+                        Image(systemName: "xmark")
+                            .foregroundColor(.blue)
+                    }
                 }
             }
             .padding([.top], -20)
