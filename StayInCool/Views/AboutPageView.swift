@@ -144,6 +144,7 @@ struct AboutPageView: View {
                     Text("支持我们")
                 }
             }
+            .padding([.top], -20)
         }
     }
 }

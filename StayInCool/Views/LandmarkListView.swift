@@ -49,8 +49,18 @@ struct LandmarkListView: View {
                 VStack {
                     if let landmark = selectedLandmark {
                         VStack(alignment: .leading) {
-                            Text(landmark.name)
-                                .font(.title)
+                            HStack {
+                                Text(landmark.name)
+                                    .font(.title)
+                                Spacer()
+                                Button {
+                                    isPresenting.toggle()
+                                } label: {
+                                    Image(systemName: "xmark")
+                                        .font(.title)
+                                        .foregroundColor(.blue)
+                                }
+                            }
                             Divider()
                             HStack {
                                 Text(landmark.name)
@@ -136,6 +146,7 @@ struct LandmarkListView: View {
             })
             .navigationTitle("搜索结果")
         }
+        .padding([.top], -20)
     }
     
     func didDismiss() {

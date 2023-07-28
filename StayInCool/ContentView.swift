@@ -62,7 +62,7 @@ struct ContentView: View {
                             showingAboutPage.toggle()
                         }
                     }) {
-                        Image(systemName: "line.horizontal.3")
+                        Image(systemName: "list.bullet")
                             .font(.title)
                             .foregroundColor(.white)
                             .padding(10)
@@ -72,7 +72,21 @@ struct ContentView: View {
             }
         }
         .sheet(isPresented: $showingAboutPage) {
-            AboutPageView()
+            VStack {
+                HStack {
+                    Spacer()
+                    Button {
+                        showingAboutPage.toggle()
+                    } label: {
+                        Image(systemName: "xmark")
+                            .font(.title)
+                            .foregroundColor(.blue)
+                            .padding([.trailing, .top],20)
+                    }
+                }
+                
+                AboutPageView()
+            }
         }
     }
     
